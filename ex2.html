@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function() {
+        const result = $('#result')
+        let count = 0
+
+        $("#btn").on("click", (e) => {
+            console.log(e)
+            // e.target.innerHTML = "ZZZZZZ"
+            // alert("click")
+            result.append(`<li>AAA     ${count++}</li>`)
+        })
+
+        $("#result").on("click", "li", function(e) {
+            $(e.target).remove()
+        })
+
+        // $("#result").on("click", "li", (e) => {
+        //     console.log(this)
+        // })
+    })
+</script>
+
+<button id="btn">CLICK</button>
+
+<ul id="result">
+
+</ul>
+
+</body>
+</html>
